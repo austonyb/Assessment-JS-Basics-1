@@ -61,6 +61,7 @@ for (i = 0; i < 7; i++){
 
 console.log(totalAcres)
 
+// this one was tricky, I'm not going to lie, I got held up on this problem for a long time. I ended up solving it by having a loop that added the value at the index (i) for each array to the variable 'totalAcres.' Once the loop is complete, it logs to the console the total acres worth of harvest that has been gathered for all three varieties of apples.
 
 // PROBLEM 2
 
@@ -79,6 +80,8 @@ console.log(totalAcres)
 let averageDailyAcres = totalAcres / 7
 
 console.log(averageDailyAcres)
+
+//This code takes the total acres harvested and divides it by the number of days of the week. In other words, it just finds the average amount of acres harvested everyday.
 
 
 
@@ -117,9 +120,11 @@ let days = 0
 // CODE HERE
 
 while (acresLeft > 0){
+    acresLeft = acresLeft -= averageDailyAcres;
     days = days + 1;
-    acresLeft = acresLeft -= averageDailyAcres
 }
+
+//This while loop uses the averageDailyAcres variable defined above and uses it to calculate/estimate how many days it will take to finish the harvest at the current pace. Each time if runs through the loop, it subtracts from the acresLeft variable the previous average amount harvested per day and adds 1 to the days variable. The loop closes once there are no acres left to harvest and gives you an estimate of how many days are left to complete. In this instance, the answer is 20. The console message below just prints the answer to the console.
 
 console.log(`it will take ${days} days to finish the harvest.`)
 
@@ -161,6 +166,8 @@ for (i = 0; i < fujiTons.length; i++){
     pinkTons[i] = pinkTons[i] * 6.5;
 }
 
+//There are two main things going on in this answer. One, the original arrays containing the harvest data for the 3 different varieties of apples are copied to new arrays. Two, a for loop runs through each newly made array and multiplies the value of each item in the array by 6.5 to calculate the tonage harvested.
+
 // console.log(fujiTons)
 // console.log(galaTons)
 // console.log(pinkTons)
@@ -194,7 +201,7 @@ for (i = 0; i < fujiTons.length; i++){
     fujiPounds = fujiPounds += fujiTons[i] * 2000
 }
 
-// console.log(fujiPounds)
+console.log(fujiPounds)
 
 let galaPounds = 0
 
@@ -202,7 +209,7 @@ for (i = 0; i < galaTons.length; i++){
     galaPounds = galaPounds += galaTons[i] * 2000
 }
 
-// console.log(galaPounds)
+console.log(galaPounds)
 
 let pinkPounds = 0
 
@@ -210,8 +217,10 @@ for (i = 0; i < pinkTons.length; i++){
     pinkPounds = pinkPounds += pinkTons[i] * 2000
 }
 
-// console.log(pinkPounds)
+console.log(pinkPounds)
 
+
+// Above are three four loops that convert the values of tons to pounds. Each apple variety gets a new variable to store the amount in pounds. Initially, before each loop, the pound variable are declared at 0. The loops take the amount in ton, multiply that by 2000 and add that value to the new pound variables.
 
 // PROBLEM 6
 
@@ -237,7 +246,7 @@ let pinkProfit = pinkPounds * pinkPrice
 
 console.log("$" + fujiProfit + " $" + galaProfit + " $" + pinkProfit)
 
-
+//Above code determines the profit per variety of apple by multiplying the pound variables declared in problem 5 by the price per pound declared at the beginning of this file. After determing profit, the amounts are printed to the console.
 
 
 // PROBLEM 7
@@ -255,3 +264,5 @@ console.log("$" + fujiProfit + " $" + galaProfit + " $" + pinkProfit)
 totalProfit = fujiProfit + galaProfit + pinkProfit
 
 console.log(totalProfit)
+
+//The above code adds together the values from the profit variables determined above to get a total profit. This is then printed to the console.
